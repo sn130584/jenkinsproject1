@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-nodeportservice
+spec:
+  type: LoadBalancer 
+  selector:
+    app: newaddressbookapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+    nodePort: 31000
+
